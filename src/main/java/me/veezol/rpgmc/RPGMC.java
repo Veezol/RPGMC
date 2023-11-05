@@ -1,24 +1,35 @@
 package me.veezol.rpgmc;
 
-import me.veezol.rpgmc.config.PluginConfig;
+import me.veezol.rpgmc.config.MainConfig;
+import me.veezol.rpgmc.data.PlayerData;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
 public final class RPGMC extends JavaPlugin {
 
-    private PluginConfig config;
+    private MainConfig mainConfig;
+    private PlayerData playerData;
     private final Logger logger = getLogger();
 
     @Override
     public void onEnable() {
-        config = new PluginConfig(this);
-        logger.info(  "The plugin is enabled.");
+        mainConfig = new MainConfig();
+        playerData = new PlayerData();
+        playerData.connect(mainConfig.getDatabaseUsername(),
+                mainConfig.getDatabasePassword(),
+                mainConfig.getDatabaseURI());
+        logger.info("The plugin is enabled.");
     }
 
     @Override
     public void onDisable() {
-        config.save();
+        mainConfig.save();
+        playerData.close();
         logger.info("The plugin is disabled");
+    }
+
+    public MainConfig getMainConfig() {
+        return mainConfig;
     }
 }

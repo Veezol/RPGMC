@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 group = 'me.veezol'
@@ -19,6 +20,7 @@ repositories {
 
 dependencies {
 compileOnly "org.spigotmc:spigot-api:1.20.2-R0.1-SNAPSHOT"
+implementation 'org.mongodb:mongodb-driver-sync:4.11.0'
 }
 
 def targetJavaVersion = 17
@@ -43,5 +45,11 @@ processResources {
     filteringCharset 'UTF-8'
     filesMatching('plugin.yml') {
         expand props
+    }
+}
+
+shadowJar {
+    dependencies {
+        exclude(dependency('org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'))
     }
 }

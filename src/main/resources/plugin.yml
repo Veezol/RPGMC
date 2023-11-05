@@ -1,0 +1,4 @@
+name: RPGMC
+version: '${version}'
+main: me.veezol.rpgmc.RPGMC
+api-version: '1.20'

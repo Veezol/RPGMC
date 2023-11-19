@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RPGMC.main.iml" filepath="$PROJECT_DIR$/.idea/modules/RPGMC.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/me.veezol.RPGMC.main.iml" filepath="$PROJECT_DIR$/.idea/modules/me.veezol.RPGMC.main.iml" />
     </modules>
   </component>
 </project>

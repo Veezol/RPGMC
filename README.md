@@ -1,2 +1,2 @@
 # RPGMC
-Experience RPG in Minecxraft
+Experience RPG in Minecraft

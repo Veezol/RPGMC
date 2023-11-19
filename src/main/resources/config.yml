@@ -1,4 +1,9 @@
+# Database can either be 'mongodb' or 'json'.
+# If you chose 'json', the plugin will save & read from a local .json data file,
+# If you chose 'mongodb', the plugin will connect to the mongodb database you provide.
+database: 'json'
 mongodb:
-  username: ""
-  password: ""
-  uri: ""
+  username: ''
+  password: ''
+  uri: ''
+  database: ''
